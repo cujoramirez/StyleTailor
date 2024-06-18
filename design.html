@@ -88,6 +88,24 @@
                <h2 id="products_title" class="section__titlep">Design Your T-Shirt!</h2>
                <div id="includecontent" class="designer-container">
                   <iframe src="desginer.html" width="100%" height="100%"></iframe>
+
+                  <script>
+                     
+// Example: Load JSON data from a file
+fetch('polotno.json')
+.then(response => response.json())
+.then(data => {
+  // Initialize Polotno with the loaded JSON data
+  const polotno = new window.Polotno({
+    container: document.getElementById('polotno-container'), // Container element in your HTML
+    toolbarContainer: document.getElementById('polotno-toolbar'), // Optional: Toolbar container
+  });
+  
+  // Load the design from JSON data
+  polotno.loadFromJSON(data);
+})
+.catch(error => console.error('Error loading JSON:', error));
+                  </script>
                 </div>
                </div>
             </div>
@@ -133,7 +151,9 @@
       <!--=============== KONVA ===============-->
       <script type="module" src="assets\react-app\dist\assets\index-eef8c9da.js"></script>
 
-      <!--=============== JQUERY JS ===============-->
+      <!--=============== POLOTNO JS ===============-->
+      <script src="https://cdn.jsdelivr.net/npm/polotno@1.2.0/dist/polotno.min.js"></script>
+
 
       
 

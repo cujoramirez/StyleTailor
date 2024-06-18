@@ -242,6 +242,22 @@ document.addEventListener("DOMContentLoaded", function() {
           loginButton.href = 'loginPage.html';
         }
       });
+
+// Example: Load JSON data from a file
+fetch('polotno.json')
+.then(response => response.json())
+.then(data => {
+  // Initialize Polotno with the loaded JSON data
+  const polotno = new window.Polotno({
+    container: document.getElementById('polotno-container'), // Container element in your HTML
+    toolbarContainer: document.getElementById('polotno-toolbar'), // Optional: Toolbar container
+  });
+  
+  // Load the design from JSON data
+  polotno.loadFromJSON(data);
+})
+.catch(error => console.error('Error loading JSON:', error));
+
       
       
 
