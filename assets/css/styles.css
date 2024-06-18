@@ -491,6 +491,23 @@ img.img-responsive{
   display: block;
 }
 
+.buttondownload{
+  background-color: var(--second-color);
+  color: var(--second-color-dark);
+  font-weight: var(--font-semi-bold);
+  padding: .75rem 2rem;
+  border-radius: 2rem;
+  box-shadow: inset var(--shadow-button);
+  margin: 0 auto;
+  display: block;
+}
+
+.buttondownload:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Ensures text color changes with background */
+    cursor: pointer;
+}
+
 .button-back{
   background-color: var(--second-color);
   color: var(--second-color-dark);
@@ -542,7 +559,8 @@ img.img-responsive{
   border-radius: 4px;
 }
 
-.button_men{
+.button_men,
+.button_men1{
   background-color: #08a4fe;
   color: white;
   font-weight: var(--font-semi-bold);
@@ -556,7 +574,40 @@ img.img-responsive{
   display: block;
 }
 
-.button_women{
+.button_men2{
+  background-color: #088cd8;
+  color: rgb(0, 0, 0);
+  font-weight: var(--font-semi-bold);
+  padding: .75rem 2rem;
+  border-radius: 4rem;
+  box-shadow: inset var(--shadow-button);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  display: block;
+}
+
+.button_men:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #2b2b2b; /* Ensures text color changes with background */
+  cursor: pointer;
+}
+
+.button_men1:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #2e2e2e; /* Ensures text color changes with background */
+  cursor: pointer;
+}
+
+.button_men2:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* Ensures text color changes with background */
+  cursor: pointer;
+}
+
+.button_women,
+.button_women1{
   background-color: pink;
   color: rgb(80, 59, 44);
   font-weight: var(--font-semi-bold);
@@ -567,6 +618,35 @@ img.img-responsive{
   margin-right: auto;
   position: relative;
   display: block;
+}
+
+.button_women2{
+  background-color: rgb(192, 144, 152);
+  color: rgb(240, 231, 225);
+  font-weight: var(--font-semi-bold);
+  padding: .75rem 2rem;
+  border-radius: 4rem;
+  box-shadow: inset var(--shadow-button);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: block;
+}
+
+.button_women:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff; /* Ensures text color changes with background */
+  cursor: pointer;
+}
+.button_women1:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff; /* Ensures text color changes with background */
+  cursor: pointer;
+}
+.button_women2:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #383737; /* Ensures text color changes with background */
+  cursor: pointer;
 }
 
 .button__ghost{
