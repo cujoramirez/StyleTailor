@@ -168,4 +168,83 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+  document.getElementById('upload-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file && file.type === 'image/png') {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imagePreview = document.getElementById('image-preview');
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert('Please upload a valid PNG file.');
+    }
+  });
+
+
+  const loginStatus = localStorage.getItem('loggedIn');
+    const loginStatusDiv = document.getElementById('login-status');
+
+    if (loginStatus === 'true') {
+      loginStatusDiv.textContent = 'You are logged in.';
+      loginStatusDiv.style.color = 'green';
+    } else {
+      loginStatusDiv.textContent = 'You are not logged in.';
+      loginStatusDiv.style.color = 'red';
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+      
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const formMessage = document.getElementById('formMessage');
+      
+        if (validateEmail(email) && validatePassword(password)) {
+          // Simulate a login process
+          formMessage.textContent = 'Logging in...';
+          formMessage.style.color = 'green';
+          formMessage.style.display = 'block';
+      
+          // Store login status in localStorage
+          localStorage.setItem('loggedIn', 'true');
+      
+          // Redirect to another page after a short delay
+          setTimeout(() => {
+            window.location.href = 'dashboard.html'; // Replace with your target page
+          }, 2000);
+        } else {
+          formMessage.textContent = 'Invalid email or password. Please try again.';
+          formMessage.style.display = 'block';
+        }
+      });
+      
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+      
+      function validatePassword(password) {
+        return password.length >= 6; // Simple password validation (minimum 6 characters)
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const loginButton = document.getElementById('loginButton');
+        const loginStatus = localStorage.getItem('loggedIn');
+      
+        if (loginStatus === 'true') {
+          loginButton.textContent = 'LOGGED IN';
+          loginButton.href = 'loginPage.html'; // Optionally, redirect to dashboard or another page
+        } else {
+          loginButton.textContent = 'Log in / Sign up';
+          loginButton.href = 'loginPage.html';
+        }
+      });
+      
+      
+
+
+
 

@@ -282,7 +282,8 @@ img {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  max-width: 1500px;
+  max-width: 3500px;
+  height: 800px;
   left: -250px;
 }
 
@@ -506,34 +507,39 @@ img.img-responsive{
   position: relative;
 }
 
-.upload-button{
+.upload-container {
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  width: 100%; /* Full width of the parent container */
+  max-width: 400px; /* Optional: maximum width for the container */
+  margin: 0 auto; /* Centers the container itself */
+  padding: 10px; /* Optional: padding for spacing */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.upload-button {
   background-color: var(--second-color);
   color: var(--second-color-dark);
   font-weight: var(--font-semi-bold);
   padding: .75rem 2rem;
   border-radius: 4rem;
   box-shadow: inset var(--shadow-button);
-  margin-left: auto;
-  margin-right: auto;
-  display:inline-block;
-  position: relative;
-  right: -480px;
-  z-index: 1;
+  margin: 10px 0; /* Adds vertical spacing */
+  display: inline-block; /* Ensures the button takes up only necessary width */
+  cursor: pointer; /* Changes cursor to pointer on hover */
 }
 
+.upload-input {
+  display: none; /* Hides the input as it's not styled */
+}
 
-.upload-input{
-  background-color: var(--second-color);
-  color: var(--second-color-dark);
-  font-weight: var(--font-semi-bold);
-  box-shadow: inset var(--shadow-button);
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-block;
-  position: relative;
-  right: -320px;
-  width: 80px;
-  z-index: 0;
+.image-preview {
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .button_men{
@@ -1219,7 +1225,7 @@ canvas {
   }
 
   .designer-container{
-    width: 1500px;
+    width: 3000px;
     left: -240px;
   }
 
